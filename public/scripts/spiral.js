@@ -57,7 +57,7 @@ function init() {
     function onKeyDown(e) {
         switch (e.which) {
             case 32:
-                if (app.play) {
+                if (!app.audio.paused) {
                     app.audio.pause();
                     app.play = false;
                 } else {
@@ -155,11 +155,11 @@ function init() {
 
 // GUI control panel
 var GuiControls = function(){
-    this.intensity = 0.18;
+    this.intensity = 0.08;
     this.toggleRed = true;
     this.toggleGreen = false;
     this.toggleBlue = false;
-    this.fov = 35;
+    this.fov = 50;
     this.R = 0.7;
     this.G = 0;
     this.B = 0.7;
@@ -174,10 +174,10 @@ var GuiControls = function(){
     this.bFlower = 0;
     this.flowerAngle = 2.86;
     this.spiral = false;
-    this.wavySpiral = true;
+    this.wavySpiral = false;
     this.flower = false;
-    this.circle = false;
-    this.animate = true;
+    this.circle = true;
+    this.animate = false;
 };
 
 var spiral = new GuiControls();
